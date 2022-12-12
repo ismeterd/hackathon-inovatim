@@ -85,12 +85,16 @@ if __name__ == "__main__":
     target_temperature = RoboticArm.optimum_temperature
 
     fig, ax = plt.subplots()
+    fig, az = plt.subplots()
     
     plt.plot(time_array, temperature_array)
     ax.set(xlabel = "Time - axis", ylabel = "Temperature - axis")
+    az.set(xlabel = "Time - axis", ylabel = "RPM - axis")
     x = []
     y = []
+    z = []
     ax.plot(x, y)
+    az.plot(x, z)
     plt.title("Robotic Arm - Operating Temperature Variation Characteristic")
     plt.axhline(y=75, color='r', linestyle='--')        
 
@@ -111,7 +115,10 @@ if __name__ == "__main__":
         temperature_array.append(robot.temperature)
         x.append(robot.working_time)
         y.append(robot.temperature)
+        z.append(robot.rpm)
         ax.plot(x, y)
+        az.plot(x, z)
         plt.pause(0.0005)
 
 #     END OF WHILE
+
