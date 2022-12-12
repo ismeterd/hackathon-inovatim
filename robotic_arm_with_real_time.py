@@ -86,17 +86,19 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots()
     fig, az = plt.subplots()
-    
+
     plt.plot(time_array, temperature_array)
-    ax.set(xlabel = "Time - axis", ylabel = "Temperature - axis")
+
     az.set(xlabel = "Time - axis", ylabel = "RPM - axis")
+    ax.set(xlabel = "Time - axis", ylabel = "Temperature - axis")
     x = []
     y = []
     z = []
     ax.plot(x, y)
     az.plot(x, z)
-    plt.title("Robotic Arm - Operating Temperature Variation Characteristic")
-    plt.axhline(y=75, color='r', linestyle='--')        
+    ax.set_title("Robotic Arm - Operating Temperature Variation Characteristic")
+    az.set_title("Robotic Arm - Operating RPM Characteristic")
+            
 
 
     while robot.working_time < 1000:
@@ -113,11 +115,13 @@ if __name__ == "__main__":
 
         time_array.append(robot.working_time)
         temperature_array.append(robot.temperature)
+
         x.append(robot.working_time)
         y.append(robot.temperature)
         z.append(robot.rpm)
-        ax.plot(x, y)
+
         az.plot(x, z)
+        ax.plot(x, y)
         plt.pause(0.0005)
 
 #     END OF WHILE
