@@ -47,26 +47,17 @@ if __name__ == "__main__":
     time_array = []
     temperature_array = []
     rpm_array = []
-    time_array = []
-    temperature_array = []
-
 
     fig, ax = plt.subplots()
-    fig, az = plt.subplots()
+    fig2, az = plt.subplots()
 
     plt.plot(time_array, temperature_array)
 
-    az.set(xlabel = "Time - axis", ylabel = "RPM - axis")
-    ax.set(xlabel = "Time - axis", ylabel = "Temperature - axis")
-    x = []
-    y = []
-    z = []
-    ax.plot(x, y)
-    az.plot(x, z)
+    az.set(xlabel="Time - axis", ylabel="RPM - axis")
+    ax.set(xlabel="Time - axis", ylabel="Temperature - axis")
+
     ax.set_title("Robotic Arm - Operating Temperature Variation Characteristic")
     az.set_title("Robotic Arm - Operating RPM Characteristic")
-    
-
 
     # Print ack
     if ack.lower() == "ack":
@@ -92,26 +83,12 @@ if __name__ == "__main__":
             print("RPM Value: {}".format(rpm))
             print("-------------------------------------")
 
-            time_array.append(robot.working_time)
-            temperature_array.append(robot.temperature)
-
-            x.append(time_array)
-            y.append(temperature_array)
-            z.append(rpm_array)
-
-            az.plot(x, z)
-            ax.plot(x, y)
-            plt.pause(0.0005)
-
+            az.plot(time_array, rpm_array)
+            ax.plot(time_array, temperature_array)
+            plt.pause(0.0001)
 
             if working_time == 1000:
                 break
 
     client.close()
 
-    plt.plot(time_array, temperature_array)
-    plt.xlabel("time - axis")
-    plt.ylabel("temperature - axis")
-    plt.title("Robotic Arm - Operating Temperature Variation Characteristic")
-    plt.axhline(y=75, color='r', linestyle='--')
-    plt.show()
