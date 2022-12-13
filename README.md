@@ -25,3 +25,8 @@ Birleşmiş Milletler Sürdürülebilir Kalınma Hedefleri        |  Türkiye İ
 <p align="right">
   <img width="600" src="https://github.com/ismeterd/hackathon-inovatim/blob/master/logos/temperature.jpeg">
 </p>
+
+<p align="left">
+  <img width="600" src="https://github.com/ismeterd/hackathon-inovatim/blob/master/logos/rpm.png">
+</p>
+
