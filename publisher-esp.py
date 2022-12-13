@@ -42,7 +42,8 @@ if __name__ == "__main__":
         print("Robot Time -> {}".format(robot.working_time))
         print("Robot Temp. -> {}".format(robot.temperature))
         print("Robot RPM. -> {}".format(robot.rpm))
-        time.sleep(0.005)
+        # for consistent dynamic plotting, delay is determined as 0.5
+        time.sleep(0.05)
 
         data = __generate_data_for_topic(topic_name, robot.working_time, robot.temperature, robot.rpm)
         message = __generate_publish_message(topic_name, data)
