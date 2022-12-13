@@ -22,6 +22,6 @@ Birleşmiş Milletler Sürdürülebilir Kalınma Hedefleri        |  Türkiye İ
 <br/>
 
 <h2 align="center">Yapılan Robot Kol Benzetimi</h2>
-<p align="center">
+<p align="right">
   <img width="600" src="https://github.com/ismeterd/hackathon-inovatim/blob/master/logos/temperature.jpeg">
 </p>
